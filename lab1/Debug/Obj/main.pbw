@@ -1,0 +1,100 @@
+[
+  {
+    "ID": "c:@F@turnOnRed",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void turnOnRed(void)",
+    "location": {
+      "column": "6",
+      "line": "1",
+      "path": "C:\\Users\\saika\\Downloads\\ES\\lab1\\main.c"
+    },
+    "name": "turnOnRed",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@turnOnBlue",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void turnOnBlue(void)",
+    "location": {
+      "column": "6",
+      "line": "10",
+      "path": "C:\\Users\\saika\\Downloads\\ES\\lab1\\main.c"
+    },
+    "name": "turnOnBlue",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@turnOnGreen",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void turnOnGreen(void)",
+    "location": {
+      "column": "6",
+      "line": "19",
+      "path": "C:\\Users\\saika\\Downloads\\ES\\lab1\\main.c"
+    },
+    "name": "turnOnGreen",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@delay",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void delay(int)",
+    "location": {
+      "column": "6",
+      "line": "28",
+      "path": "C:\\Users\\saika\\Downloads\\ES\\lab1\\main.c"
+    },
+    "name": "delay",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@878@F@delay@j",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "j",
+    "location": {
+      "column": "14",
+      "line": "29",
+      "path": "C:\\Users\\saika\\Downloads\\ES\\lab1\\main.c"
+    },
+    "name": "j",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@918@F@delay@i",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "i",
+    "location": {
+      "column": "18",
+      "line": "30",
+      "path": "C:\\Users\\saika\\Downloads\\ES\\lab1\\main.c"
+    },
+    "name": "i",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "33",
+      "path": "C:\\Users\\saika\\Downloads\\ES\\lab1\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  }
+]
