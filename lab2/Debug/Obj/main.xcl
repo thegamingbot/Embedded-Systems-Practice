@@ -1,15 +1,15 @@
-"C:\Users\saika\Downloads\ES\lab2\main.c"
+"C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\main.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\saika\Downloads\ES\lab2\Debug\Obj\main.pbi.dep
+C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\Obj\main.pbi.dep
 -o
 main.pbi
 -I
-C:\Users\saika\Downloads\ES\lab2
+C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\inc
 -I

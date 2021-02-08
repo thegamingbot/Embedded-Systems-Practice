@@ -45,7 +45,7 @@ int main (){
     GPIO_PORTF_DEN_R |= (ENABLE_RED | ENABLE_BLUE | ENABLE_GREEN | ENABLE_SWITCH);
     GPIO_PORTF_DIR_R |= (ENABLE_RED | ENABLE_BLUE | ENABLE_GREEN);
     GPIO_PORTF_SWITCH = 0x01U;
-    
+
     while (1){
         while (GPIO_PORTF_SWITCH != 0x00U){
             turnOnLED (index);
