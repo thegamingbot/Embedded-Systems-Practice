@@ -1,3 +1,2 @@
-main.pbi: \
-  C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\TM4C123GH6PM.h \
-  C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\main.c
+main.pbi: C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\main.c \
+  C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2/TM4C123GH6PM.h
