@@ -40,9 +40,9 @@ int main(){
 
     while (1){
         turnOnRed ();
-        delay(1);
+        delay(3);
         turnOnBlue ();
-        delay(2);
+        delay(3);
         turnOnGreen ();
         delay(3);
     }

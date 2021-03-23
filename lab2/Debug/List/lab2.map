@@ -1,22 +1,23 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.50.9.278/W32 for ARM                  01/Feb/2021  14:59:33
-# Copyright 2007-2020 IAR Systems AB.
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  16/Mar/2021  12:22:04
+# Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
 #        C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\Exe\lab2.out
 #    Map file     =
 #        C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\List\lab2.map
 #    Command line =
-#        -f C:\Users\saika\AppData\Local\Temp\EW67B9.tmp
+#        -f
+#        C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\Exe\lab2.out.rsp
 #        (C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\Obj\main.o
 #        --no_out_extension -o
 #        C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\Exe\lab2.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
 #        C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\List\lab2.map
-#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
-#        8.4\arm\CONFIG\generic_cortex.icf" --semihosting --entry
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\CONFIG\generic_cortex.icf" --semihosting --entry
 #        __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
@@ -58,21 +59,21 @@ initialize by copy { rw };
   .intvec            ro code          0x0   0x40  vector_table_M.o [3]
                                    - 0x40   0x40
 
-"P1":                                      0x1a4
-  .text              ro code         0x40   0xbc  main.o [1]
-  .text              ro code         0xfc   0x2e  copy_init3.o [3]
-  .text              ro code        0x12a    0x2  vector_table_M.o [3]
-  .text              ro code        0x12c   0x28  data_init.o [3]
-  .iar.init_table    const          0x154   0x14  - Linker created -
-  .text              ro code        0x168   0x1e  cmain.o [3]
-  .text              ro code        0x186    0x4  low_level_init.o [2]
-  .text              ro code        0x18a    0x4  exit.o [2]
-  .text              ro code        0x190    0xa  cexit.o [3]
-  .text              ro code        0x19c   0x14  exit.o [4]
-  .text              ro code        0x1b0   0x1c  cstartup_M.o [3]
-  Initializer bytes  const          0x1cc   0x18  <for P2-1>
-  .rodata            const          0x1e4    0x0  copy_init3.o [3]
-                                  - 0x1e4  0x1a4
+"P1":                                      0x1b0
+  .text              ro code         0x40   0xcc  main.o [1]
+  .text              ro code        0x10c   0x2a  copy_init3.o [3]
+  .text              ro code        0x136    0x2  vectortrap_M.o [3]
+  .text              ro code        0x138   0x28  data_init.o [3]
+  .iar.init_table    const          0x160   0x14  - Linker created -
+  .text              ro code        0x174   0x1e  cmain.o [3]
+  .text              ro code        0x192    0x4  low_level_init.o [2]
+  .text              ro code        0x196    0x4  exit.o [2]
+  .text              ro code        0x19c    0xa  cexit.o [3]
+  .text              ro code        0x1a8   0x14  exit.o [4]
+  .text              ro code        0x1bc   0x1c  cstartup_M.o [3]
+  Initializer bytes  const          0x1d8   0x18  <for P2-1>
+  .rodata            const          0x1f0    0x0  copy_init3.o [3]
+                                  - 0x1f0  0x1b0
 
 "P2", part 1 of 2:                          0x18
   P2-1                        0x2000'0000   0x18  <Init block>
@@ -88,7 +89,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x1e4     0x7'ffff  0x7'fe1c
+        0x1f0     0x7'ffff  0x7'fe10
   0x2000'0418  0x2000'ffff    0xfbe8
 
 
@@ -100,7 +101,7 @@ Unused ranges:
           -------      ----
 Copy (__iar_copy_init3)
     1 source range, total size 0x18:
-                0x1cc  0x18
+                0x1d8  0x18
     1 destination range, total size 0x18:
           0x2000'0000  0x18
 
@@ -117,9 +118,9 @@ command line/config:
     Total:
 
 C:\Users\saika\Downloads\Embedded-Systems-Practice\lab2\Debug\Obj: [1]
-    main.o                188       24       24
+    main.o                204       24       24
     -------------------------------------------
-    Total:                188       24       24
+    Total:                204       24       24
 
 dl7M_tln.a: [2]
     exit.o                  4
@@ -130,12 +131,13 @@ dl7M_tln.a: [2]
 rt7M_tl.a: [3]
     cexit.o                10
     cmain.o                30
-    copy_init3.o           46
+    copy_init3.o           42
     cstartup_M.o           28
     data_init.o            40
-    vector_table_M.o       66
+    vector_table_M.o       64
+    vectortrap_M.o          2
     -------------------------------------------
-    Total:                220
+    Total:                216
 
 shb_l.a: [4]
     exit.o                 20
@@ -145,7 +147,7 @@ shb_l.a: [4]
     Gaps                    4
     Linker created                  20    1'024
 -----------------------------------------------
-    Grand Total:          440       44    1'048
+    Grand Total:          452       44    1'048
 
 
 *******************************************************************************
@@ -154,27 +156,35 @@ shb_l.a: [4]
 
 Entry                       Address  Size  Type      Object
 -----                       -------  ----  ----      ------
-.iar.init_table$$Base         0x154         --   Gb  - Linker created -
-.iar.init_table$$Limit        0x168         --   Gb  - Linker created -
-?main                         0x169        Code  Gb  cmain.o [3]
+.iar.init_table$$Base         0x160         --   Gb  - Linker created -
+.iar.init_table$$Limit        0x174         --   Gb  - Linker created -
+?main                         0x175        Code  Gb  cmain.o [3]
+BusFault_Handler              0x137        Code  Wk  vectortrap_M.o [3]
 CSTACK$$Base            0x2000'0018         --   Gb  - Linker created -
 CSTACK$$Limit           0x2000'0418         --   Gb  - Linker created -
-Region$$Table$$Base           0x154         --   Gb  - Linker created -
-Region$$Table$$Limit          0x168         --   Gb  - Linker created -
-__cmain                       0x169        Code  Gb  cmain.o [3]
-__exit                        0x19d  0x14  Code  Gb  exit.o [4]
-__iar_copy_init3               0xfd  0x2e  Code  Gb  copy_init3.o [3]
-__iar_data_init3              0x12d  0x28  Code  Gb  data_init.o [3]
-__iar_program_start           0x1b1        Code  Gb  cstartup_M.o [3]
-__low_level_init              0x187   0x4  Code  Gb  low_level_init.o [2]
+DebugMon_Handler              0x137        Code  Wk  vectortrap_M.o [3]
+HardFault_Handler             0x137        Code  Wk  vectortrap_M.o [3]
+MemManage_Handler             0x137        Code  Wk  vectortrap_M.o [3]
+NMI_Handler                   0x137        Code  Wk  vectortrap_M.o [3]
+PendSV_Handler                0x137        Code  Wk  vectortrap_M.o [3]
+Region$$Table$$Base           0x160         --   Gb  - Linker created -
+Region$$Table$$Limit          0x174         --   Gb  - Linker created -
+SVC_Handler                   0x137        Code  Wk  vectortrap_M.o [3]
+SysTick_Handler               0x137        Code  Wk  vectortrap_M.o [3]
+UsageFault_Handler            0x137        Code  Wk  vectortrap_M.o [3]
+__cmain                       0x175        Code  Gb  cmain.o [3]
+__exit                        0x1a9  0x14  Code  Gb  exit.o [4]
+__iar_copy_init3              0x10d  0x2a  Code  Gb  copy_init3.o [3]
+__iar_data_init3              0x139  0x28  Code  Gb  data_init.o [3]
+__iar_program_start           0x1bd        Code  Gb  cstartup_M.o [3]
+__low_level_init              0x193   0x4  Code  Gb  low_level_init.o [2]
 __vector_table                  0x0        Data  Gb  vector_table_M.o [3]
-_call_main                    0x175        Code  Gb  cmain.o [3]
-_exit                         0x191        Code  Gb  cexit.o [3]
-_main                         0x17f        Code  Gb  cmain.o [3]
+_call_main                    0x181        Code  Gb  cmain.o [3]
+_exit                         0x19d        Code  Gb  cexit.o [3]
 colors                  0x2000'0000  0x18  Data  Gb  main.o [1]
 delay                          0x41   0xc  Code  Gb  main.o [1]
-exit                          0x18b   0x4  Code  Gb  exit.o [2]
-main                           0x61  0x78  Code  Gb  main.o [1]
+exit                          0x197   0x4  Code  Gb  exit.o [2]
+main                           0x61  0x86  Code  Gb  main.o [1]
 turnOffLED                     0x59   0x8  Code  Gb  main.o [1]
 turnOnLED                      0x4d   0xc  Code  Gb  main.o [1]
 
@@ -184,7 +194,7 @@ turnOnLED                      0x4d   0xc  Code  Gb  main.o [1]
 [3] = rt7M_tl.a
 [4] = shb_l.a
 
-    440 bytes of readonly  code memory
+    452 bytes of readonly  code memory
      44 bytes of readonly  data memory
   1'048 bytes of readwrite data memory
 

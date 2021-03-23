@@ -3,5 +3,8 @@
     <project>
         <path>$WS_DIR$\lab3.ewp</path>
     </project>
+    <project>
+        <path>$WS_DIR$\..\lab4\lab4.ewp</path>
+    </project>
     <batchBuild />
 </workspace>

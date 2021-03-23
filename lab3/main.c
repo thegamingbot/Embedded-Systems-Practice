@@ -49,46 +49,19 @@ int main(){
     GPIO_PORTF_PUR_R = ENABLE_SWITCH_1 | ENABLE_SWITCH_2;
     GPIO_PORTF_DEN_R = (ENABLE_RED | ENABLE_BLUE | ENABLE_GREEN | ENABLE_SWITCH_1 | ENABLE_SWITCH_2);
     GPIO_PORTF_DIR_R = (ENABLE_RED | ENABLE_BLUE | ENABLE_GREEN);
-    GPIO_PORTF_DATA_R = 0x01U;
 
     while (1){
-        while (GPIO_PORTF_DATA_R == 0x01U){
-            turnOnLED (primaryColors[primaryIndex]);
-            primaryFlag = 1;
-            delay (1000000);
-            GPIO_PORTF_DATA_R |= 0x11U;
+        if (GPIO_PORTF_DATA_R == 0x01U){
+            turnOnLED (primaryColors[0]);
         }
-        if (primaryFlag == 1){
-            turnOffLED ();
-            primaryIndex = (primaryIndex + 1) % 3;
-            primaryFlag = 0;
-            delay (1000000);
-            GPIO_PORTF_DATA_R = 0x10U;
+        else if (GPIO_PORTF_DATA_R == 0x10U){
+            turnOnLED (primaryColors[1]);
         }
-        while (GPIO_PORTF_DATA_R == 0x10U){
-            turnOnLED (secondaryColors[secondaryIndex]);
-            secondaryFlag = 1;
-            delay (1000000);
-            GPIO_PORTF_DATA_R |= 0x11U;
+        else if (GPIO_PORTF_DATA_R == 0x00U){
+            turnOnLED (primaryColors[2]);
         }
-        if (secondaryFlag == 1){
-            turnOffLED ();
-            secondaryIndex = (secondaryIndex + 1) % 3;
-            secondaryFlag = 0;
-            delay (1000000);
-            GPIO_PORTF_DATA_R = 0x00U;
-        }
-        while (GPIO_PORTF_DATA_R == 0x00U){
-            turnOnLED (secondaryColors[3]);
-            whiteFlag = 1;
-            delay (1000000);
-            GPIO_PORTF_DATA_R |= 0x11U;
-        }
-        if (whiteFlag == 1){
-            turnOffLED ();
-            whiteFlag = 0;
-            delay (1000000);
-            GPIO_PORTF_DATA_R = 0x01U;
+        else {
+            turnOffLED();
         }
     }
 }
